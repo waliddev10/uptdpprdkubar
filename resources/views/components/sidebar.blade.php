@@ -17,12 +17,12 @@
                         <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2"
                                 aria-hidden="true"></i></div>
                     </li>
-                    <li class="sidebar-list">
+                    {{-- <li class="sidebar-list">
                         <a class="sidebar-link sidebar-title link-nav active" href="{{ route('dashboard.index') }}">
                             <i data-feather="home"></i>
                             <span>Beranda</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="sidebar-list">
                         <a class="sidebar-link sidebar-title link-nav active" href="{{ route('dashboard.index') }}">
                             <i data-feather="clock"></i>
