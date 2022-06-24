@@ -14,8 +14,7 @@
                             <h4 class="f-w-600 font-primary"><i class="me-1" data-feather="clock"></i><span
                                     id="clock_txt"></span></h4>
                             <p>Cek Absensi Anda hari ini.</p>
-                            <div class="whatsnew-btn"><a href="{{ route('kalender_penugasan.index') }}"
-                                    class="btn btn-primary">Cek Absensi</a>
+                            <div class="whatsnew-btn"><a class="btn btn-primary">Cek Absensi</a>
                             </div>
                         </div>
                     </div>
