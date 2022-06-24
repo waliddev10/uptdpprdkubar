@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Bidang;
-use App\Models\Pangkat;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -56,25 +54,27 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nama' => 'required|string',
-            'email' => 'required|email',
-            'nip' => 'required|string',
-            'jabatan' => 'required|string',
-            'pangkat_id' => 'required',
-            'bidang_id' => 'required',
-            'no_hp' => 'required',
-            'password' => 'required|string',
-            'role' => 'required|in:admin,user',
+            'kode' => 'required',
+            'password' => 'required',
+            'nama' => 'required',
+            'tempat_lahir' => 'required',
+            'tgl_lahir' => 'required',
+            'jenis_kelamin' => 'required',
+            'nip_nik' => 'required',
+            'jabatan' => 'required',
+            'pangkat' => 'required',
+            'role' => 'required',
         ]);
 
         User::create([
+            'kode' => $request->kode,
             'nama' => $request->nama,
-            'email' => $request->email,
-            'nip' => $request->nip,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tgl_lahir' => $request->tgl_lahir,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'nip_nik' => $request->nip_nik,
             'jabatan' => $request->jabatan,
-            'pangkat_id' => $request->pangkat_id,
-            'bidang_id' => $request->bidang_id,
-            'no_hp' => $request->no_hp,
+            'pangkat' => $request->pangkat,
             'email_verified_at' => Carbon::now()->format('Y-m-d'),
             'password' => Hash::make($request->password),
             'role' => $request->role,
@@ -109,26 +109,26 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'nama' => 'required|string',
-            'email' => 'required|email',
-            'nip' => 'required|string',
-            'jabatan' => 'required|string',
-            'pangkat_id' => 'required',
-            'bidang_id' => 'required',
-            'no_hp' => 'required',
+            'kode' => 'required',
             'password' => 'nullable',
-            'role' => 'required|in:admin,user',
+            'nama' => 'required',
+            'tempat_lahir' => 'required',
+            'tgl_lahir' => 'required',
+            'jenis_kelamin' => 'required',
+            'nip_nik' => 'required',
+            'jabatan' => 'required',
+            'pangkat' => 'required',
         ]);
 
         $data = User::findOrFail($id);
+        $data->kode = $request->kode;
         $data->nama = $request->nama;
-        $data->email = $request->email;
-        $data->nip = $request->nip;
+        $data->tempat_lahir = $request->tempat_lahir;
+        $data->tgl_lahir = $request->tgl_lahir;
+        $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->nip_nik = $request->nip_nik;
         $data->jabatan = $request->jabatan;
-        $data->pangkat_id = $request->pangkat_id;
-        $data->bidang_id = $request->bidang_id;
-        $data->no_hp = $request->no_hp;
-        $data->role = $request->role;
+        $data->pangkat = $request->pangkat;
         if ($request->password) {
             $data->password = Hash::make($request->password);
         }

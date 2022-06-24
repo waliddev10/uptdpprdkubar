@@ -39,7 +39,7 @@
             </div>
             <div class="mt-2">
                 <label class="form-label">Tanggal Lahir</label>
-                <input type="text" name="tgl_lahir" class="form-control input-air-primary" />
+                <input type="date" name="tgl_lahir" class="form-control input-air-primary" />
             </div>
             <div class="mt-2">
                 <label class="form-label">NIP/NIK</label>

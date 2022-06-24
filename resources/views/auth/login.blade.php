@@ -6,7 +6,7 @@
         <form method="POST" action="{{ route('login') }}" class="theme-form">
             @csrf
             <div>
-                <img class="img" height="64" src="{{ asset('assets/images/logo-bapenda.png') }}" alt="looginpage">
+                <img class="img mb-3" height="48" src="{{ asset('assets/images/logo-bapenda.png') }}" alt="looginpage">
             </div>
             <div class="form-group">
                 <label class="col-form-label">ID Pegawai</label>
@@ -27,7 +27,7 @@
                 <input type="hidden" value="true" name="remember">
                 <div class="text-end mt-3">
                     <button class="btn btn-primary-gradien btn-block w-100" type="submit"><i data-feather="cpu"></i>
-                        Proses Akses</button>
+                        MASUK</button>
                 </div>
             </div>
         </form>
